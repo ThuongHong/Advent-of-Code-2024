@@ -16,8 +16,6 @@ bool part1(const vector<ll> &nums, ll target, int idx, ll cur)
         return cur == target;
     }
 
-    ll multiplier = static_cast<ll>(pow(10, to_string(nums[idx]).length()));
-
     // Explore addition, multiplication
     return part1(nums, target, idx + 1, cur + nums[idx]) ||
            part1(nums, target, idx + 1, cur * nums[idx]);
